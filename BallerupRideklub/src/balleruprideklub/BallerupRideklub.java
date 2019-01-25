@@ -6,6 +6,7 @@
 
 package balleruprideklub;
 
+import Business.Person;
 import java.util.Scanner;
 import javafx.application.ConditionalFeature;
 /**

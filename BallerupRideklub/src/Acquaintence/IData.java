@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-package balleruprideklub;
+package Acquaintence;
 
 /**
  *
+ * @author Alexa
  */
-public class Horse {
-
+public interface IData {
+    
+    void injectBusiness(IBusiness bus);
+    
 }

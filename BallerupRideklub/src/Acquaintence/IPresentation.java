@@ -9,6 +9,10 @@ package Acquaintence;
  *
  * @author Alexa
  */
-public class IPresentation {
+public interface IPresentation {
+    
+    void injectBusiness(IBusiness bus);
+    
+    void startApplication(String[] args);
     
 }

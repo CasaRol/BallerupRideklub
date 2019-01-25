@@ -9,6 +9,10 @@ package Acquaintence;
  *
  * @author Alexa
  */
-public class IBusiness {
+public interface IBusiness {
+    
+    void injectData(IData data);
+
+    void injectPresentation(IPresentation pres);
     
 }

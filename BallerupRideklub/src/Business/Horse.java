@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Acquaintence;
+
+package Business;
 
 /**
  *
- * @author Alexa
  */
-public class IConnection {
-    
+public class Horse {
+
 }

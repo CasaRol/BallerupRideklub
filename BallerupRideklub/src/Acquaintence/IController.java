@@ -5,10 +5,14 @@
  */
 package Acquaintence;
 
+import javafx.stage.Stage;
+
 /**
  *
  * @author Alexa
  */
-public class IController {
+public interface IController {
+    
+    void injectStage(Stage stage);
     
 }

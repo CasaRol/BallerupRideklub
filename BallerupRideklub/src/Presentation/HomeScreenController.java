@@ -41,11 +41,11 @@ public class HomeScreenController implements Initializable {
 
     @FXML
     public void calculatePerson(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(HomeScreenController.class.getResource("JobInterface.fxml"));
-        person_btn = (ImageView) loader.load();
-        Scene scene = new Scene(person_btn);
-        setScene(scene);
+//        FXMLLoader loader = new FXMLLoader();
+//        loader.setLocation(HomeScreenController.class.getResource("JobInterface.fxml"));
+//        person_btn = (ImageView) loader.load();
+//        Scene scene = new Scene(person_btn);
+//        setScene(scene);
     }
 
 }
