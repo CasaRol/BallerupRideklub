@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1200.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="Presentation.CalcPersonController">
+   <children>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="636.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/Rideklub_Logo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="366.0" layoutY="14.0" text="Beregn dit rytterniveau">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <Separator layoutX="366.0" layoutY="84.0" prefHeight="0.0" prefWidth="485.0" style="-fx-background-color: Black;" />
+      <RadioButton layoutX="522.0" layoutY="636.0" mnemonicParsing="false" text="Ja">
+         <toggleGroup>
+            <ToggleGroup fx:id="Consent" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton layoutX="635.0" layoutY="636.0" mnemonicParsing="false" text="Nej" toggleGroup="$Consent" />
+      <Label layoutX="423.0" layoutY="586.0" text="Må vi opbevare dine information til fremtidig reference?" />
+      <Label layoutX="371.0" layoutY="607.0" text="Dette vil inkludere: Hestefordeling til stævner samt regulær undevisning" />
+      <Label fx:id="label_Information" layoutX="801.0" layoutY="586.0" onMouseClicked="#OpenInformation" prefHeight="21.0" prefWidth="56.0" text="\\uD83D" />
+   </children>
+</AnchorPane>

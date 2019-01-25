@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #DCDCDC;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentation.HomeScreenController">
+   <children>
+      <Label layoutX="415.0" layoutY="14.0" text="Ballerup Rideklub">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <Label layoutX="506.0" layoutY="76.0" text="Internal grading system">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="56.0" layoutY="237.0" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <ImageView fx:id="horse_btn" fitHeight="700.0" fitWidth="450.0" onMouseClicked="#calculateHorse" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assets/Horse.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="694.0" layoutY="237.0" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <ImageView fx:id="person_btn" fitHeight="700.0" fitWidth="450.0" onMouseClicked="#calculatePerson" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assets/Person.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Label layoutX="800.0" layoutY="202.0" text="Beregn din egen score">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="184.0" layoutY="202.0" text="Beregn hestescore">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
