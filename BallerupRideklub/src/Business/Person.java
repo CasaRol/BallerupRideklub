@@ -29,8 +29,19 @@ public class Person {
         this.balance = balance;
     }
     
-    private void calcPoints(int weightPoint, int heightPoint, int level, int BMIPoint, boolean balance){
+    private int calcScore(int weight, int height, String level, int BMI, String balance){
+        int weightPoint = weightCalc(weight);
+        int heightPoint = heightCalc(height);
+        int levelPoint = levelcalc(level);
+        int BMIPoint = BMIcalc(BMI);
+        int balancePoint = balanceCalc(balance);
         
+        int score = -1;
+        if(weightPoint != -1 || heightPoint != -1 || levelPoint != -1 || BMIPoint != -1 || balancePoint != -1) {
+            score = (weightPoint + heightPoint + levelPoint + BMIPoint + balancePoint);
+        }
+        
+        return score;
     }
     
     public int weightCalc(int weight){
@@ -96,11 +107,11 @@ public class Person {
         System.out.println("level = " + level);
         int levelPoint = -1;
         
-        if(level.equals("begynder")){
+        if(level.equals("beginner")){
             levelPoint = 5;
-        } else if(level.equals("letøvet")){
+        } else if(level.equals("trained")){
             levelPoint = 3;
-        } else if("trained".equals(level)){
+        } else if(level.equals("expert")){
             levelPoint = 1;
         }
         
