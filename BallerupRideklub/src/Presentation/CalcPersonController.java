@@ -5,6 +5,7 @@
  */
 package Presentation;
 
+import Acquaintence.IController;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -12,13 +13,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
  *
  * @author CasaRol
  */
-public class CalcPersonController implements Initializable {
+public class CalcPersonController implements IController, Initializable {
 
     @FXML
     private ToggleGroup Consent;
@@ -30,11 +32,16 @@ public class CalcPersonController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        label_Information.setText("\\uD83D");
+//        label_Information.setText("\\uD83D");
     }    
 
     @FXML
     private void OpenInformation(MouseEvent event) {
+    }
+
+    @Override
+    public void injectStage(Stage stage) {
+        PresentationFacade.stage = stage;
     }
     
 }
