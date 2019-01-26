@@ -19,15 +19,15 @@ public class Person {
     int BMI;
     boolean balance;
 
-//    public Person(String firstName, String lastName, int weight, int height, String level, int BMI, boolean balance) {
-//        this.firstName = firstName;
-//        this.lastName = lastName;
-//        this.weight = weight;
-//        this.height = height;
-//        this.level = level;
-//        this.BMI = BMI;
-//        this.balance = balance;
-//    }
+    public Person(String firstName, String lastName, int weight, int height, String level, int BMI, boolean balance) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.weight = weight;
+        this.height = height;
+        this.level = level;
+        this.BMI = BMI;
+        this.balance = balance;
+    }
     
     private void calcPoints(int weightPoint, int heightPoint, int level, int BMIPoint, boolean balance){
         

@@ -12,6 +12,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -23,7 +24,7 @@ import javafx.stage.Stage;
  */
 public class HomeScreenController implements IController, Initializable {
     
-    private PresentationFacade presentation = PresentationFacade.getInstance();
+//    private PresentationFacade presentation = PresentationFacade.getInstance();
 
     @FXML
     private ImageView horse_btn;
@@ -38,22 +39,24 @@ public class HomeScreenController implements IController, Initializable {
         // TODO
     }
 
+    @Override
+    public void injectStage(Stage stage) {
+        PresentationFacade.stage = stage;
+    }
+    
     public void calculateHorse(ActionEvent event) {
 
     }
 
     @FXML
     public void calculatePerson(MouseEvent event) throws IOException {
-        presentation.changeScene("CalcPerson.fxml");
+        PresentationFacade.getInstance().changeScene("CalcPerson.fxml");
     }
 
     @FXML
     private void calculateHorse(MouseEvent event) {
     }
 
-    @Override
-    public void injectStage(Stage stage) {
-        PresentationFacade.stage = stage;
-    }
+    
 
 }

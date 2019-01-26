@@ -61,4 +61,8 @@ public class PresentationFacade implements IPresentation, IController {
         stage.show();
     }
 
+    public static Stage getStage() {
+        return stage;
+    }
+
 }

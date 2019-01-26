@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1200.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="Presentation.CalcPersonController">
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentation.CalcPersonController">
    <children>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="636.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -22,15 +23,44 @@
             <Font size="48.0" />
          </font>
       </Label>
-      <Separator layoutX="366.0" layoutY="84.0" prefHeight="0.0" prefWidth="485.0" style="-fx-background-color: Black;" />
-      <RadioButton layoutX="522.0" layoutY="636.0" mnemonicParsing="false" text="Ja">
+      <Separator layoutX="366.0" layoutY="79.0" prefHeight="0.0" prefWidth="485.0" style="-fx-background-color: Black;" />
+      <RadioButton fx:id="rbtn_concentYes" layoutX="522.0" layoutY="636.0" mnemonicParsing="false" text="Ja">
          <toggleGroup>
             <ToggleGroup fx:id="Consent" />
          </toggleGroup>
       </RadioButton>
-      <RadioButton layoutX="635.0" layoutY="636.0" mnemonicParsing="false" text="Nej" toggleGroup="$Consent" />
+      <RadioButton fx:id="rbtn_concentNo" layoutX="635.0" layoutY="636.0" mnemonicParsing="false" text="Nej" toggleGroup="$Consent" />
       <Label layoutX="423.0" layoutY="586.0" text="Må vi opbevare dine information til fremtidig reference?" />
       <Label layoutX="371.0" layoutY="607.0" text="Dette vil inkludere: Hestefordeling til stævner samt regulær undevisning" />
-      <Label fx:id="label_Information" layoutX="801.0" layoutY="586.0" onMouseClicked="#OpenInformation" prefHeight="21.0" prefWidth="56.0" text="\\uD83D" />
+      <Label fx:id="label_Information" layoutX="801.0" layoutY="586.0" onMouseClicked="#OpenInformation" prefHeight="21.0" prefWidth="56.0" />
+      <Label layoutX="357.0" layoutY="181.0" text="Fornavn" />
+      <Button fx:id="btn_back" layoutX="23.0" layoutY="24.0" mnemonicParsing="false" onAction="#backToMainMenu" text="&lt;- Tilbage" />
+      <Label layoutX="354.0" layoutY="215.0" text="Efternavn" />
+      <Label layoutX="357.0" layoutY="249.0" text="Vægt" />
+      <Label layoutX="358.0" layoutY="283.0" text="Højde" />
+      <Label layoutX="355.0" layoutY="306.0" text="Niveau" />
+      <Label layoutX="363.0" layoutY="397.0" text="BMI" />
+      <Label layoutX="353.0" layoutY="436.0" text="Balance" />
+      <TextField fx:id="txt_firstName" layoutX="472.0" layoutY="177.0" />
+      <TextField fx:id="txt_lastName" layoutX="472.0" layoutY="211.0" />
+      <TextField fx:id="txt_weight" layoutX="472.0" layoutY="245.0" />
+      <TextField fx:id="txt_height" layoutX="472.0" layoutY="279.0" />
+      <TextField fx:id="txt_BMI" layoutX="472.0" layoutY="393.0" />
+      <RadioButton fx:id="rbtn_beginner" layoutX="472.0" layoutY="314.0" mnemonicParsing="false" text="Begynder">
+         <toggleGroup>
+            <ToggleGroup fx:id="level" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="rbtn_trained" layoutX="472.0" layoutY="340.0" mnemonicParsing="false" text="Letøvet" toggleGroup="$level" />
+      <RadioButton fx:id="rbtn_expert" layoutX="472.0" layoutY="366.0" mnemonicParsing="false" text="Øvet" toggleGroup="$level" />
+      <RadioButton fx:id="rbtn_balanceYes" layoutX="472.0" layoutY="485.0" mnemonicParsing="false" text="Ja">
+         <toggleGroup>
+            <ToggleGroup fx:id="balance" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="rbtn_balanceNo" layoutX="528.0" layoutY="485.0" mnemonicParsing="false" text="Nej" toggleGroup="$balance" />
+      <Label layoutX="452.0" layoutY="418.0" prefHeight="70.0" prefWidth="242.0" text="Kan du stå på ét ben med lukkede øjne i minimum 30 sekender uden at føre jorden?" wrapText="true" />
+      <Button fx:id="btn_calculate" layoutX="405.0" layoutY="699.0" mnemonicParsing="false" onAction="#calcScore" text="Beregn  din karakter" />
+      <Button fx:id="btn_cancel" layoutX="595.0" layoutY="699.0" mnemonicParsing="false" onAction="#clearInfo" text="Annullér" />
    </children>
 </AnchorPane>
