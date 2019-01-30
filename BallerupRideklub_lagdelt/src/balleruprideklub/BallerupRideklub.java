@@ -24,6 +24,9 @@ public class BallerupRideklub extends Application {
         Scene scene = new Scene(root);
         stage.setTitle("Ballerup Rideklub - Karakterberegning");
         
+        javafx.scene.image.Image image = new javafx.scene.image.Image("/Assets/Rideklub_Logo.png");
+        stage.getIcons().add(image);
+        
         stage.setScene(scene);
         stage.show();
     }
