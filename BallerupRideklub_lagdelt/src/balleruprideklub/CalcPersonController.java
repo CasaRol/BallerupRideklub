@@ -62,12 +62,12 @@ public class CalcPersonController implements Initializable {
         
         //Fill weightBox and set visible limit
         comb_weight.getItems().addAll(fillWeightBox());
-        comb_weight.setVisibleRowCount(5);
+        comb_weight.setVisibleRowCount(10);
         comb_weight.getSelectionModel().selectFirst();
 
         //Fill heightBox and set visible limit
         comb_height.getItems().addAll(fillHeightBox());
-        comb_height.setVisibleRowCount(5);
+        comb_height.setVisibleRowCount(10);
         comb_height.getSelectionModel().selectFirst();
 
         //Fill levelBox
