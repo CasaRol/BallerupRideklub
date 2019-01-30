@@ -5,14 +5,13 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentation.CalcPersonController">
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="balleruprideklub.CalcPersonController">
    <children>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="636.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -25,16 +24,11 @@
          </font>
       </Label>
       <Separator layoutX="366.0" layoutY="79.0" prefHeight="0.0" prefWidth="485.0" style="-fx-background-color: Black;" />
-      <Label fx:id="label_warning" layoutX="405.0" layoutY="663.0" prefHeight="21.0" prefWidth="444.0" />
-      <Label layoutX="357.0" layoutY="181.0" text="Fornavn" />
-      <Button fx:id="btn_back" layoutX="23.0" layoutY="24.0" mnemonicParsing="false" onAction="#backToMainMenu" text="&lt;- Tilbage" />
-      <Label layoutX="354.0" layoutY="215.0" text="Efternavn" />
+      <Label fx:id="label_warning" layoutX="387.0" layoutY="736.0" prefHeight="21.0" prefWidth="444.0" />
       <Label layoutX="357.0" layoutY="249.0" text="Vægt" />
       <Label layoutX="358.0" layoutY="283.0" text="Højde" />
       <Label layoutX="356.0" layoutY="318.0" text="Niveau" />
       <Label layoutX="353.0" layoutY="354.0" text="Balance" />
-      <TextField fx:id="txt_firstName" layoutX="472.0" layoutY="177.0" />
-      <TextField fx:id="txt_lastName" layoutX="472.0" layoutY="211.0" />
       <RadioButton fx:id="rbtn_balanceYes" layoutX="472.0" layoutY="403.0" mnemonicParsing="false" text="Ja">
          <toggleGroup>
             <ToggleGroup fx:id="balance" />
@@ -47,5 +41,15 @@
       <ComboBox fx:id="comb_weight" layoutX="472.0" layoutY="245.0" prefWidth="150.0" />
       <ComboBox fx:id="comb_height" layoutX="472.0" layoutY="279.0" prefWidth="150.0" />
       <ComboBox fx:id="comb_level" layoutX="472.0" layoutY="314.0" prefWidth="150.0" />
+      <Label fx:id="label_gradeInfo" layoutX="522.0" layoutY="522.0" text="Din karakter">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_grade" layoutX="504.0" layoutY="567.0" prefHeight="98.0" prefWidth="133.0">
+         <font>
+            <Font name="System Bold" size="48.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

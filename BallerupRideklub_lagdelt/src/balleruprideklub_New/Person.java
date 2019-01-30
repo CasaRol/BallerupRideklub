@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package Business;
+package balleruprideklub_New;
 
 /**
  *
@@ -18,33 +18,31 @@ public class Person {
     String level;
     int BMI;
     boolean balance;
-
-    public Person(String firstName, String lastName, int weight, int height, String level, int BMI, boolean balance) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.weight = weight;
-        this.height = height;
-        this.level = level;
-        this.BMI = BMI;
-        this.balance = balance;
-    }
     
-    private int calcScore(int weight, int height, String level, int BMI, String balance){
+    
+    
+    public int calcScore(int weight, int height, String level, boolean balance){
         int weightPoint = weightCalc(weight);
+        System.out.println("weightPoint = " + weightCalc(weight));
         int heightPoint = heightCalc(height);
+        System.out.println("heightPoint = " + heightCalc(height));
         int levelPoint = levelcalc(level);
-        int BMIPoint = BMIcalc(BMI);
+        System.out.println("levelPoint = " + levelcalc(level));
+        int BMIPoint = BMIcalc(weight, height);
+        System.out.println("BMIPoint = " + BMIcalc(weight, height));
         int balancePoint = balanceCalc(balance);
+        System.out.println("balancePoint = " + balanceCalc(balance));
         
         int score = -1;
-        if(weightPoint != -1 || heightPoint != -1 || levelPoint != -1 || BMIPoint != -1 || balancePoint != -1) {
+        if(weightPoint != -1 && heightPoint != -1 && levelPoint != -1 && BMIPoint != -1 && balancePoint != -1) {
             score = (weightPoint + heightPoint + levelPoint + BMIPoint + balancePoint);
         }
+        System.out.println("Score = " + score);
         
         return score;
     }
     
-    public int weightCalc(int weight){
+    private int weightCalc(int weight){
         int weightPoint = -1;
         if(weight <= 0){
             weightPoint = -1;
@@ -81,7 +79,7 @@ public class Person {
         return weightPoint;
     }
     
-    public int heightCalc(int height){
+    private int heightCalc(int height){
         int heightPoint = -1;
         
         if(height < 150){
@@ -103,34 +101,47 @@ public class Person {
         return heightPoint;
     }
     
-    public int levelcalc(String level){
+    private int levelcalc(String level){
         System.out.println("level = " + level);
+        
         int levelPoint = -1;
         
-        if(level.equals("beginner")){
-            levelPoint = 5;
-        } else if(level.equals("trained")){
-            levelPoint = 3;
-        } else if(level.equals("expert")){
-            levelPoint = 1;
+        switch (level) {
+            case "Begynder":
+                levelPoint = 5;
+                break;
+            case "Letøvet":
+                levelPoint = 3;
+                break;
+            case "Øvet":
+                levelPoint = 1;
+                break;
         }
+        System.out.println("LevelPoint = " + levelPoint);
         
         return levelPoint;
     }
     
-    public int BMIcalc(int BMI){
+    private int BMIcalc(int weight, int height){
+        double heightConvert = (height + 0.0);
+        double BMI = (weight/Math.pow((heightConvert/100), 2));
+        System.out.println("BMI = " + BMI);
+        
         int BMIPoint = 0;
         
         if(BMI > 27){
             BMIPoint = 1;
         }
+        
+        System.out.println("BMIPoint = " + BMIPoint);
+        
         return BMIPoint;
     }
     
-    public int balanceCalc(String balance){
-        if(balance.equals("true")){
+    private int balanceCalc(boolean balance){
+        if(balance = true) {
             return 0;
-        } else if(balance.equals("false")){
+        } else if(balance = false) {
             return 1;
         }
         

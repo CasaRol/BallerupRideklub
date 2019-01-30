@@ -3,10 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Presentation;
+package balleruprideklub_New;
 
-import Acquaintence.IController;
-import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,21 +18,17 @@ import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
-import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
 
 /**
  * FXML Controller class
  *
  * @author CasaRol
  */
-public class CalcPersonController implements IController, Initializable {
+public class CalcPersonController implements Initializable {
+    
+    private Person person = new Person();
 
-    @FXML
-    private Button btn_back;
-    @FXML
     private TextField txt_firstName;
-    @FXML
     private TextField txt_lastName;
     @FXML
     private RadioButton rbtn_balanceYes;
@@ -54,6 +48,10 @@ public class CalcPersonController implements IController, Initializable {
     private ComboBox<?> comb_level;
     @FXML
     private Label label_warning;
+    @FXML
+    private Label label_gradeInfo;
+    @FXML
+    private Label label_grade;
 
     /**
      * Initializes the controller class.
@@ -77,11 +75,9 @@ public class CalcPersonController implements IController, Initializable {
         //Fill levelBox
         comb_level.getItems().addAll(fillLevelBox());
         comb_level.getSelectionModel().selectFirst();
-    }
-
-    @Override
-    public void injectStage(Stage stage) {
-        PresentationFacade.stage = stage;
+        
+        label_gradeInfo.setVisible(false);
+//        label_grade.setVisible(false);
     }
 
     private List fillWeightBox() {
@@ -113,10 +109,16 @@ public class CalcPersonController implements IController, Initializable {
 
         return levelList;
     }
-
-    @FXML
-    private void backToMainMenu(ActionEvent event) throws IOException {
-        PresentationFacade.getInstance().changeScene("HomeScreen.fxml");
+    
+    private boolean balance() {
+        boolean selection = false;
+        if(rbtn_balanceYes.isSelected()){
+            selection = true;
+        } else if(rbtn_balanceNo.isSelected()) {
+            selection = false;
+        }
+        
+        return selection;
     }
 
     @FXML
@@ -125,9 +127,17 @@ public class CalcPersonController implements IController, Initializable {
         System.out.println("calcScore entered");
         if (!(comb_weight.getSelectionModel().getSelectedItem().toString().equals("Vælg kg")) && !(comb_height.getSelectionModel().getSelectedItem().toString().equals("Vælg cm")) && !(comb_level.getSelectionModel().getSelectedItem().toString().equals("Vælg niveau"))) {
             System.out.println("inside if");
+            label_gradeInfo.setVisible(true);
+//            label_grade.setVisible(false);
+            System.out.println("weight = " + comb_weight.getSelectionModel().getSelectedItem());
+            System.out.println("Height = " + comb_height.getSelectionModel().getSelectedItem());
+            System.out.println("level = " + comb_level.getSelectionModel().getSelectedItem());
+            System.out.println("balance = " + balance());
+            System.out.println("Karakter = " + person.calcScore((Integer.parseInt(comb_weight.getSelectionModel().getSelectedItem().toString())), (Integer.parseInt(comb_height.getSelectionModel().getSelectedItem().toString())), (comb_level.getSelectionModel().getSelectedItem().toString()), balance()));
+            label_grade.setText(person.calcScore((Integer.parseInt(comb_weight.getSelectionModel().getSelectedItem().toString())), (Integer.parseInt(comb_height.getSelectionModel().getSelectedItem().toString())), (comb_level.getSelectionModel().getSelectedItem().toString()), balance()) + "");
         } else {
             System.out.println("outside if");
-            label_warning.setText("Venligst udfyld alle informationerne");
+            label_warning.setText("Udfyld venligst alle informationerne");
         }
     }
 
