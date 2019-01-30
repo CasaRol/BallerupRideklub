@@ -102,7 +102,7 @@ public class Person {
             case "Begynder":
                 levelPoint = 5;
                 break;
-            case "Letøvet":
+            case "Let øvet":
                 levelPoint = 3;
                 break;
             case "Øvet":

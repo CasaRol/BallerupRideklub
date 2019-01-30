@@ -102,7 +102,7 @@ public class CalcPersonController implements Initializable {
         ArrayList levelList = new ArrayList();
         levelList.add("Vælg niveau");
         levelList.add("Begynder");
-        levelList.add("Letøvet");
+        levelList.add("Let øvet");
         levelList.add("Øvet");
 
         return levelList;
