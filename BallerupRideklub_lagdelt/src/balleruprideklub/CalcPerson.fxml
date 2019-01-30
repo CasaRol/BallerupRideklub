@@ -37,7 +37,7 @@
          <font>
             <Font name="Microsoft Sans Serif" size="14.0" />
          </font></Label>
-      <RadioButton fx:id="rbtn_balanceYes" layoutX="393.0" layoutY="281.0" mnemonicParsing="false" style="-fx-cursor: hand; -fx: black;" text="Ja">
+      <RadioButton fx:id="rbtn_balanceYes" focusTraversable="false" layoutX="393.0" layoutY="281.0" mnemonicParsing="false" style="-fx-cursor: hand; -fx: black;" text="Ja">
          <toggleGroup>
             <ToggleGroup fx:id="balance" />
          </toggleGroup>
@@ -49,16 +49,16 @@
          <font>
             <Font name="Microsoft Sans Serif" size="14.0" />
          </font></Label>
-      <RadioButton fx:id="rbtn_balanceNo" layoutX="449.0" layoutY="281.0" mnemonicParsing="false" style="-fx-cursor: hand;" text="Nej" toggleGroup="$balance">
+      <RadioButton fx:id="rbtn_balanceNo" focusTraversable="false" layoutX="449.0" layoutY="281.0" mnemonicParsing="false" style="-fx-cursor: hand;" text="Nej" toggleGroup="$balance">
          <font>
             <Font size="14.0" />
          </font></RadioButton>
       <Label layoutX="373.0" layoutY="214.0" prefHeight="70.0" prefWidth="242.0" text="Kan du stå på ét ben med lukkede øjne i minimum 30 sekender uden at røre jorden?" wrapText="true" />
-      <Button fx:id="btn_calculate" layoutX="307.0" layoutY="448.0" mnemonicParsing="false" onAction="#calcScore" style="-fx-cursor: hand;" text="Beregn din score" />
-      <ComboBox fx:id="comb_level" layoutX="393.0" layoutY="192.0" prefWidth="150.0" style="-fx-cursor: hand;" />
-      <Button fx:id="btn_cancel" layoutX="472.0" layoutY="448.0" mnemonicParsing="false" onAction="#clearInfo" style="-fx-cursor: hand;" text="Ny beregning" />
-      <ComboBox fx:id="comb_weight" layoutX="393.0" layoutY="123.0" prefWidth="150.0" style="-fx-cursor: hand;" />
-      <ComboBox fx:id="comb_height" layoutX="393.0" layoutY="157.0" prefWidth="150.0" style="-fx-cursor: hand;" />
+      <Button fx:id="btn_calculate" defaultButton="true" layoutX="307.0" layoutY="448.0" mnemonicParsing="false" onAction="#calcScore" style="-fx-cursor: hand;" text="Beregn din score" />
+      <ComboBox fx:id="comb_level" focusTraversable="false" layoutX="393.0" layoutY="192.0" prefWidth="150.0" style="-fx-cursor: hand;" />
+      <Button fx:id="btn_cancel" focusTraversable="false" layoutX="472.0" layoutY="448.0" mnemonicParsing="false" onAction="#clearInfo" style="-fx-cursor: hand;" text="Ny beregning" />
+      <ComboBox fx:id="comb_weight" focusTraversable="false" layoutX="393.0" layoutY="123.0" prefWidth="150.0" style="-fx-cursor: hand;" />
+      <ComboBox fx:id="comb_height" focusTraversable="false" layoutX="393.0" layoutY="157.0" prefWidth="150.0" style="-fx-cursor: hand;" />
       <Label fx:id="label_gradeInfo" layoutX="366.0" layoutY="305.0" text="Din rytterscore">
          <font>
             <Font name="System Bold" size="18.0" />

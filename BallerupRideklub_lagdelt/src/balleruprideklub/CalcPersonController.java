@@ -122,6 +122,7 @@ public class CalcPersonController implements Initializable {
     @FXML
     private void calcScore(ActionEvent event) {
         if (!(comb_weight.getSelectionModel().getSelectedItem().toString().equals("Vælg kg")) && !(comb_height.getSelectionModel().getSelectedItem().toString().equals("Vælg cm")) && !(comb_level.getSelectionModel().getSelectedItem().toString().equals("Vælg niveau"))) {
+            label_warning.setText("");
             label_gradeInfo.setVisible(true);
             label_grade.setVisible(true);
             label_grade.setText(person.calcScore((Integer.parseInt(comb_weight.getSelectionModel().getSelectedItem().toString())), (Integer.parseInt(comb_height.getSelectionModel().getSelectedItem().toString())), (comb_level.getSelectionModel().getSelectedItem().toString()), balance()) + "");
@@ -140,6 +141,7 @@ public class CalcPersonController implements Initializable {
         label_grade.setText("");
         label_grade.setVisible(false);
         label_gradeInfo.setVisible(false);
+        label_warning.setText("");
     }
 
 }

@@ -22,7 +22,7 @@ public class BallerupRideklub extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("CalcPerson.fxml"));
         
         Scene scene = new Scene(root);
-        stage.setTitle("Ballerup Rideklub - Karakterberegning");
+        stage.setTitle("Ballerup Rideklub - Rytterscore beregner");
         
         javafx.scene.image.Image image = new javafx.scene.image.Image("/Assets/Rideklub_Logo.png");
         stage.getIcons().add(image);
