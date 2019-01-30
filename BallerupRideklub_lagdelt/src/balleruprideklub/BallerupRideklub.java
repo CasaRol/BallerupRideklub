@@ -18,10 +18,7 @@ import javafx.stage.Stage;
 public class BallerupRideklub extends Application {
     
     @Override
-    public void start(Stage stage) throws Exception {
-        Person person = new Person();
-        person.calcScore(66, 168, "Øvet", true);
-        
+    public void start(Stage stage) throws Exception {        
         Parent root = FXMLLoader.load(getClass().getResource("CalcPerson.fxml"));
         
         Scene scene = new Scene(root);

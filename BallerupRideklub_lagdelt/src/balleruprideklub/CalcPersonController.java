@@ -28,8 +28,6 @@ public class CalcPersonController implements Initializable {
     
     private Person person = new Person();
 
-    private TextField txt_firstName;
-    private TextField txt_lastName;
     @FXML
     private RadioButton rbtn_balanceYes;
     @FXML
@@ -77,7 +75,7 @@ public class CalcPersonController implements Initializable {
         comb_level.getSelectionModel().selectFirst();
         
         label_gradeInfo.setVisible(false);
-//        label_grade.setVisible(false);
+        label_grade.setVisible(false);
     }
 
     private List fillWeightBox() {
@@ -123,33 +121,25 @@ public class CalcPersonController implements Initializable {
 
     @FXML
     private void calcScore(ActionEvent event) {
-//        System.out.println(comb_weight.getSelectionModel().getSelectedItem().toString());
-        System.out.println("calcScore entered");
         if (!(comb_weight.getSelectionModel().getSelectedItem().toString().equals("Vælg kg")) && !(comb_height.getSelectionModel().getSelectedItem().toString().equals("Vælg cm")) && !(comb_level.getSelectionModel().getSelectedItem().toString().equals("Vælg niveau"))) {
-            System.out.println("inside if");
             label_gradeInfo.setVisible(true);
-//            label_grade.setVisible(false);
-            System.out.println("weight = " + comb_weight.getSelectionModel().getSelectedItem());
-            System.out.println("Height = " + comb_height.getSelectionModel().getSelectedItem());
-            System.out.println("level = " + comb_level.getSelectionModel().getSelectedItem());
-            System.out.println("balance = " + balance());
-            System.out.println("Karakter = " + person.calcScore((Integer.parseInt(comb_weight.getSelectionModel().getSelectedItem().toString())), (Integer.parseInt(comb_height.getSelectionModel().getSelectedItem().toString())), (comb_level.getSelectionModel().getSelectedItem().toString()), balance()));
+            label_grade.setVisible(true);
             label_grade.setText(person.calcScore((Integer.parseInt(comb_weight.getSelectionModel().getSelectedItem().toString())), (Integer.parseInt(comb_height.getSelectionModel().getSelectedItem().toString())), (comb_level.getSelectionModel().getSelectedItem().toString()), balance()) + "");
         } else {
-            System.out.println("outside if");
             label_warning.setText("Udfyld venligst alle informationerne");
         }
     }
 
     @FXML
     private void clearInfo(ActionEvent event) {
-        txt_firstName.clear();
-        txt_lastName.clear();
         rbtn_balanceYes.setSelected(false);
         rbtn_balanceNo.setSelected(false);
         comb_weight.getSelectionModel().selectFirst();
         comb_height.getSelectionModel().selectFirst();
         comb_level.getSelectionModel().selectFirst();
+        label_grade.setText("");
+        label_grade.setVisible(false);
+        label_gradeInfo.setVisible(false);
     }
 
 }

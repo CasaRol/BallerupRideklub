@@ -23,21 +23,15 @@ public class Person {
     
     public int calcScore(int weight, int height, String level, boolean balance){
         int weightPoint = weightCalc(weight);
-        System.out.println("weightPoint = " + weightCalc(weight));
         int heightPoint = heightCalc(height);
-        System.out.println("heightPoint = " + heightCalc(height));
         int levelPoint = levelcalc(level);
-        System.out.println("levelPoint = " + levelcalc(level));
         int BMIPoint = BMIcalc(weight, height);
-        System.out.println("BMIPoint = " + BMIcalc(weight, height));
         int balancePoint = balanceCalc(balance);
-        System.out.println("balancePoint = " + balanceCalc(balance));
         
         int score = -1;
         if(weightPoint != -1 && heightPoint != -1 && levelPoint != -1 && BMIPoint != -1 && balancePoint != -1) {
             score = (weightPoint + heightPoint + levelPoint + BMIPoint + balancePoint);
         }
-        System.out.println("Score = " + score);
         
         return score;
     }
@@ -102,7 +96,6 @@ public class Person {
     }
     
     private int levelcalc(String level){
-        System.out.println("level = " + level);
         
         int levelPoint = -1;
         
@@ -117,7 +110,6 @@ public class Person {
                 levelPoint = 1;
                 break;
         }
-        System.out.println("LevelPoint = " + levelPoint);
         
         return levelPoint;
     }
@@ -125,15 +117,12 @@ public class Person {
     private int BMIcalc(int weight, int height){
         double heightConvert = (height + 0.0);
         double BMI = (weight/Math.pow((heightConvert/100), 2));
-        System.out.println("BMI = " + BMI);
         
         int BMIPoint = 0;
         
         if(BMI > 27){
             BMIPoint = 1;
         }
-        
-        System.out.println("BMIPoint = " + BMIPoint);
         
         return BMIPoint;
     }

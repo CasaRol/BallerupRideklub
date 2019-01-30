@@ -35,18 +35,18 @@
          </toggleGroup>
       </RadioButton>
       <RadioButton fx:id="rbtn_balanceNo" layoutX="528.0" layoutY="403.0" mnemonicParsing="false" text="Nej" toggleGroup="$balance" />
-      <Label layoutX="452.0" layoutY="336.0" prefHeight="70.0" prefWidth="242.0" text="Kan du stå på ét ben med lukkede øjne i minimum 30 sekender uden at føre jorden?" wrapText="true" />
-      <Button fx:id="btn_calculate" layoutX="405.0" layoutY="699.0" mnemonicParsing="false" onAction="#calcScore" text="Beregn  din karakter" />
+      <Label layoutX="452.0" layoutY="336.0" prefHeight="70.0" prefWidth="242.0" text="Kan du stå på ét ben med lukkede øjne i minimum 30 sekender uden at røre jorden?" wrapText="true" />
+      <Button fx:id="btn_calculate" layoutX="405.0" layoutY="699.0" mnemonicParsing="false" onAction="#calcScore" text="Beregn  dit niveau" />
       <Button fx:id="btn_cancel" layoutX="595.0" layoutY="699.0" mnemonicParsing="false" onAction="#clearInfo" text="Annullér" />
       <ComboBox fx:id="comb_weight" layoutX="472.0" layoutY="245.0" prefWidth="150.0" />
       <ComboBox fx:id="comb_height" layoutX="472.0" layoutY="279.0" prefWidth="150.0" />
       <ComboBox fx:id="comb_level" layoutX="472.0" layoutY="314.0" prefWidth="150.0" />
-      <Label fx:id="label_gradeInfo" layoutX="522.0" layoutY="522.0" text="Din karakter">
+      <Label fx:id="label_gradeInfo" layoutX="522.0" layoutY="522.0" text="Dit niveau">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="label_grade" layoutX="504.0" layoutY="567.0" prefHeight="98.0" prefWidth="133.0">
+      <Label fx:id="label_grade" alignment="CENTER" contentDisplay="CENTER" layoutX="504.0" layoutY="567.0" prefHeight="98.0" prefWidth="133.0">
          <font>
             <Font name="System Bold" size="48.0" />
          </font>
