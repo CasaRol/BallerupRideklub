@@ -96,7 +96,6 @@ public class Person {
     }
     
     private int levelcalc(String level){
-        
         int levelPoint = -1;
         
         switch (level) {
