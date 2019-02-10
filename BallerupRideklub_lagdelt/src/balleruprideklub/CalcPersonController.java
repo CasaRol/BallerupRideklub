@@ -27,6 +27,7 @@ import javafx.scene.control.ToggleGroup;
 public class CalcPersonController implements Initializable {
     
     private Person person = new Person();
+    private Horse horse = new Horse();
 
     @FXML
     private RadioButton rbtn_balanceYes;
@@ -59,6 +60,8 @@ public class CalcPersonController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+        horse.fillArray();
         
         //Fill weightBox and set visible limit
         comb_weight.getItems().addAll(fillWeightBox());
@@ -126,6 +129,7 @@ public class CalcPersonController implements Initializable {
             label_gradeInfo.setVisible(true);
             label_grade.setVisible(true);
             label_grade.setText(person.calcScore((Integer.parseInt(comb_weight.getSelectionModel().getSelectedItem().toString())), (Integer.parseInt(comb_height.getSelectionModel().getSelectedItem().toString())), (comb_level.getSelectionModel().getSelectedItem().toString()), balance()) + "");
+            
         } else {
             label_warning.setText("Udfyld venligst alle informationerne");
         }
