@@ -55,6 +55,11 @@ public class Horse {
             System.out.println(e);
         }
     }
+
+    @Override
+    public String toString() {
+        return name + ",\t" + niveau;
+    }
     
     
     

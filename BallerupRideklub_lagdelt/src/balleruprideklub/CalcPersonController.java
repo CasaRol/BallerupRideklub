@@ -9,15 +9,19 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
@@ -51,6 +55,14 @@ public class CalcPersonController implements Initializable {
     private Label label_gradeInfo;
     @FXML
     private Label label_grade;
+    @FXML
+    private AnchorPane anchor;
+    @FXML
+    private Label label_title;
+    @FXML
+    private ListView<Horse> listView_horseList;
+    
+    private ObservableList<Horse> horseList;
 
     /**
      * Initializes the controller class.
@@ -60,6 +72,9 @@ public class CalcPersonController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+        this.horseList = FXCollections.observableArrayList();
+        listView_horseList.setItems(horseList);
         
         horse.fillArray();
         
@@ -128,8 +143,9 @@ public class CalcPersonController implements Initializable {
             label_warning.setText("");
             label_gradeInfo.setVisible(true);
             label_grade.setVisible(true);
-            label_grade.setText(person.calcScore((Integer.parseInt(comb_weight.getSelectionModel().getSelectedItem().toString())), (Integer.parseInt(comb_height.getSelectionModel().getSelectedItem().toString())), (comb_level.getSelectionModel().getSelectedItem().toString()), balance()) + "");
-            
+            int score = person.calcScore((Integer.parseInt(comb_weight.getSelectionModel().getSelectedItem().toString())), (Integer.parseInt(comb_height.getSelectionModel().getSelectedItem().toString())), (comb_level.getSelectionModel().getSelectedItem().toString()), balance());
+            label_grade.setText(score + "");
+            fillListView(score);
         } else {
             label_warning.setText("Udfyld venligst alle informationerne");
         }
@@ -146,6 +162,18 @@ public class CalcPersonController implements Initializable {
         label_grade.setVisible(false);
         label_gradeInfo.setVisible(false);
         label_warning.setText("");
+    }
+    
+    private void fillListView(int score) {
+        System.out.println("Filling listView");
+        for(int i = 0; i<horse.horses.size(); i++) {
+            if(horse.horses.get(i).getNiveau() >= score) {
+                horseList.add(new Horse(horse.horses.get(i).getName(), horse.horses.get(i).getNiveau()));
+//                tmpList.add(new Horse(horse.horses.get(i).getName(),horse.horses.get(i).getNiveau()));
+            }
+        }
+        System.out.println("Inserting values");
+//        listView_horseList.getItems().addAll(tmpList);
     }
 
 }

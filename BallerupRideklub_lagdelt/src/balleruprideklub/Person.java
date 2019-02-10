@@ -19,8 +19,6 @@ public class Person {
     int BMI;
     boolean balance;
     
-    
-    
     public int calcScore(int weight, int height, String level, boolean balance){
         int weightPoint = weightCalc(weight);
         int heightPoint = heightCalc(height);
