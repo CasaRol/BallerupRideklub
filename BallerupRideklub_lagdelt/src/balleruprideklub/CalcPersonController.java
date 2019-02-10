@@ -162,18 +162,15 @@ public class CalcPersonController implements Initializable {
         label_grade.setVisible(false);
         label_gradeInfo.setVisible(false);
         label_warning.setText("");
+        listView_horseList.getItems().clear();
     }
     
     private void fillListView(int score) {
-        System.out.println("Filling listView");
         for(int i = 0; i<horse.horses.size(); i++) {
             if(horse.horses.get(i).getNiveau() >= score) {
                 horseList.add(new Horse(horse.horses.get(i).getName(), horse.horses.get(i).getNiveau()));
-//                tmpList.add(new Horse(horse.horses.get(i).getName(),horse.horses.get(i).getNiveau()));
             }
         }
-        System.out.println("Inserting values");
-//        listView_horseList.getItems().addAll(tmpList);
     }
 
 }

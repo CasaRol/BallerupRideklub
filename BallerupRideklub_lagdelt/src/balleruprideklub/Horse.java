@@ -48,7 +48,6 @@ public class Horse {
                 int level = Integer.parseInt(tokens[1]);
                 
                 horses.add(new Horse(name, level));
-                System.out.println(horses.size());
             }
         } catch(Exception e) {
             System.out.println("Fejl ved indlæsning af .txt");

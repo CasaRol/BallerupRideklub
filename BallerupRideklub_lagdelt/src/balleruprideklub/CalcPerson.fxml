@@ -70,11 +70,11 @@
             <Font name="System Bold" size="48.0" />
          </font>
       </Label>
-      <Label layoutX="634.0" layoutY="119.0" text="Heste oversigt">
+      <Label layoutX="626.0" layoutY="119.0" text="Heste du må ride">
          <font>
             <Font name="Microsoft Sans Serif" size="14.0" />
          </font>
       </Label>
-      <ListView fx:id="listView_horseList" focusTraversable="false" layoutX="579.0" layoutY="138.0" prefHeight="310.0" prefWidth="200.0" style="-fx-background-color: add8e6;" />
+      <ListView fx:id="listView_horseList" focusTraversable="false" layoutX="579.0" layoutY="138.0" prefHeight="310.0" prefWidth="200.0" />
    </children>
 </AnchorPane>

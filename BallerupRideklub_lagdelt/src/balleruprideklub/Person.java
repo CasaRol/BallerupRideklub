@@ -66,6 +66,10 @@ public class Person {
             weightPoint = 13;
         } else if(weight < 120){
             weightPoint = 14;
+        } else if(weight < 125) {
+            weightPoint = 15;
+        } else if(weight <= 130) {
+            weightPoint = 16;
         }
         
         return weightPoint;
@@ -74,19 +78,25 @@ public class Person {
     private int heightCalc(int height){
         int heightPoint = -1;
         
-        if(height < 150){
+        if(height <= 150) {
             heightPoint = 3;
-        } else if(height < 160){
+        } else if(height < 160) {
             heightPoint = 5;
-        } else if(height < 170){
+        } else if(height < 170) {
             heightPoint = 6;
-        } else if(height < 180){
+        } else if(height < 180) {
             heightPoint = 8;
-        } else if(height < 190){
+        } else if(height < 190) {
             heightPoint = 9;
-        } else if(height < 200){
+        } else if(height < 200) {
             heightPoint = 10;
-        } else if(height <= 0){
+        } else if(height < 210) {
+            heightPoint = 11;
+        } else if(height < 220) {
+            heightPoint = 12;
+        } else if(height <=230) {
+            heightPoint = 13;
+        } else if(height <= 0) {
             heightPoint = -1;
         }
         

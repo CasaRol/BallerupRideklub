@@ -35,12 +35,7 @@ public class BallerupRideklub extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-//        loadFile();
         launch(args);
     }
-    
-//    private void loadFile() {
-//        Horse.fillArray();
-//    }
     
 }
